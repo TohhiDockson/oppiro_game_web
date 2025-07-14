@@ -165,6 +165,7 @@ self.addEventListener('message', (event) => {
 // Download offline will check the RESOURCES for all files not in the cache
 // and populate them.
 async function downloadOffline() {
+  var origin = self.location.origin;
   var resources = [];
   var contentCache = await caches.open(CACHE_NAME);
   var currentContent = {};
